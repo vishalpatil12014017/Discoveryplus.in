@@ -160,5 +160,5 @@ To run this project, you will need to add the following environment variables to
 
 
 - GITHUB - https://github.com/vishalpatil12014017/Discoveryplus.in
-- DEMO - https://discoveryplusclone-vishal-patil.vercel.app/
+- DEMO - https://discoveryplusclone-in-vishal-patil.vercel.app/
 - BLOG -https://medium.com/@Vishal_Patil/discovery-cba046a0c2f9
