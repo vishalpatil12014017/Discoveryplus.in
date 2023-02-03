@@ -19,7 +19,7 @@ const port = process.env.PORT || 3535;
 const cors = require('cors');
 //let refreshTokens = [];
 app.use(cookieParser());
-app.use(cors({origin:'https://discoveryplus-in-vishal-patil.vercel.app/'}))
+app.use(cors({origin:'https://discoveryplus-in-vishal-patil.vercel.app'}))
 /******************* Send OTP **************/
 // app.post('/sendOTP',(req,res)=>{
 //     const phone = req.body.phone;
