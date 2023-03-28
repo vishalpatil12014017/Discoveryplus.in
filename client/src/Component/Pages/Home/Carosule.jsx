@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useState, useEffect } from 'react';
 import Dbdata from '../../../Utils/request'
+import { showLove } from "../../../data/data";
 const Toolbar = styled.header`
 
   .dot{
@@ -49,7 +50,7 @@ function Carosule() {
       .then(({ data }) => {
         setSlider(data.showlove)
         return;
-      })
+      }).catch((err)=>setSlider(showLove().showlove));
 
   }
 

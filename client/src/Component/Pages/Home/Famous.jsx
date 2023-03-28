@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Dbdata from '../../../Utils/request'
 import styled from "styled-components"
 import { Link } from 'react-router-dom'
+import { superstar } from "../../../data/data";
 function Famous() {
     const [newly, setNewly] = useState([]);
     const getshowdata = async () => {
@@ -10,7 +11,7 @@ function Famous() {
             .then(({ data }) => {
                 setNewly(data.superstar)
                 return;
-            })
+            }).catch((err)=>setNewly(superstar().superstar));
 
     }
 

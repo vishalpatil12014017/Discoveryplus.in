@@ -7,6 +7,7 @@ import Db from '../../../Utils/request'
 import { useContext } from "react"
 import { AuthContext } from "../../context/AuthContext"
 import { useState, useCallback } from 'react'
+import { showLove } from "../../../data/data";
 function Navbar() {
   const {setshowData,showdata } = useContext(AuthContext);
   //signin
@@ -26,7 +27,13 @@ function Navbar() {
       .then(({ data }) => {
         setShowlove(data.showlove)
         return;
-      })
+      }).catch((err)=>{
+        
+        setShowlove(showLove().showlove.filter((data)=>{
+          return data.title.toLowerCase().startsWith(value.toLowerCase())
+        }))
+        console.log(showlove);
+      });
 
 
   }

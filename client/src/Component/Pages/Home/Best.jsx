@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Redirect } from "react-router-dom";
+import { best } from "../../../data/data";
 function Best() {
   const [newly, setNewly] = useState([]);
   const { setshowData, showdata } = useContext(AuthContext);
@@ -17,7 +18,7 @@ function Best() {
     await Dbdata.get("best").then(({ data }) => {
       setNewly(data.best);
       return;
-    });
+    }).catch((err)=>setNewly(best().best));
   };
 
   useEffect(() => {

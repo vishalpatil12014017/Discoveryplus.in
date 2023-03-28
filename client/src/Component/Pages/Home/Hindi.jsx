@@ -9,6 +9,7 @@ import like2 from '../Img/like2.png'
 import { Link } from 'react-router-dom'
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { favHindi } from "../../../data/data";
 function Free() {
     const [newly, setNewly] = useState([]);
     const {setshowData } = useContext(AuthContext);
@@ -17,7 +18,7 @@ function Free() {
             .then(({ data }) => {
                 setNewly(data.favhindi)
                 return;
-            })
+            }).catch((err)=>setNewly(favHindi().favhindi));
 
     }
 
@@ -157,7 +158,7 @@ const Toolbar = styled.header`
   @media all and (max-width:500px){   
       width:30px;
       height:30px
-   } ,
+   } 
    @media all and (max-width:350px){   
       width:20px;
       height:20px
