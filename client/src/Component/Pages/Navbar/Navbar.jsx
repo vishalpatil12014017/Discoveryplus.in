@@ -45,7 +45,7 @@ function Navbar() {
       timer = setTimeout(() => {
         timer = null;
         func.apply(context, args)
-      }, 2000);
+      }, 1000);
     }
   }
   const optimize = useCallback(
