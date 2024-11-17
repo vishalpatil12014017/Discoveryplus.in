@@ -46,8 +46,7 @@ function Carosule() {
   }
   const [slider, setSlider] = useState([]);
   const getshowdata = () => {
-    setNewly(showLove().showlove); // Fallback logic
-
+    setSlider(showLove().showlove)
   }
 
   useEffect(() => {
