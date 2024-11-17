@@ -7,7 +7,7 @@ import axios from 'axios'
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Redirect } from "react-router";
-import Dbdata from "../../Utils/request"
+import {Dbdata} from "../../Utils/request"
 import GoogleLogin from "react-google-login";
 const SignInButton = styled.button`
     width:100%

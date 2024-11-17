@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import Dbdata from '../../Utils/request'
+import {Dbdata} from '../../Utils/request'
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({children}) =>{
