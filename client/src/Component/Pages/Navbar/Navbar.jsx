@@ -3,7 +3,7 @@ import styled from "styled-components"
 import img from '../Img/Rectangle 4.png'
 import search from '../Img/search.png'
 import { Link } from 'react-router-dom'
-import Db from '../../../Utils/request'
+import {Dbdata} from '../../../Utils/request'
 import { useContext } from "react"
 import { AuthContext } from "../../context/AuthContext"
 import { useState, useCallback } from 'react'
@@ -23,17 +23,9 @@ function Navbar() {
   const [showlove, setShowlove] = useState([]);
   const handlechange = async (event) => {
     const value = event.target.value;
-    await Db.get(`showlove/${value}`)
-      .then(({ data }) => {
-        setShowlove(data.showlove)
-        return;
-      }).catch((err)=>{
-        
-        setShowlove(showLove().showlove.filter((data)=>{
-          return data.title.toLowerCase().startsWith(value.toLowerCase())
-        }))
-        console.log(showlove);
-      });
+    setShowlove(showLove().showlove.filter((data)=>{
+      return data.title.toLowerCase().startsWith(value.toLowerCase())
+    }))
 
 
   }
