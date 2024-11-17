@@ -10,7 +10,7 @@ import primium from '../Img/primium.png'
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Redirect } from 'react-router-dom'
-import Dbdata from '../../../Utils/request'
+import { Dbdata, fetchDataWithTimeout } from "../../../Utils/request";
 import { useState, useEffect } from 'react'
 const Toolbar = styled.header`
 .hov:hover{

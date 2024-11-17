@@ -6,7 +6,7 @@ import { Wrapper } from './Wrapper';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { Redirect } from 'react-router-dom';
-import Dbdata from '../../../Utils/request'
+import { Dbdata, fetchDataWithTimeout } from "../../../Utils/request";
 function CreaditCard() {
     const [disable, setDisable] = React.useState(false)
     const handleVoucher = () => {

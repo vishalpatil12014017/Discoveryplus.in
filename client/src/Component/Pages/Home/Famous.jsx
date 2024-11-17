@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import Dbdata from '../../../Utils/request'
+import { Dbdata, fetchDataWithTimeout } from "../../../Utils/request";
 import styled from "styled-components"
 import { Link } from 'react-router-dom'
 import { superstar } from "../../../data/data";
