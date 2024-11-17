@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useState, useEffect } from 'react';
-import Dbdata from '../../../Utils/request'
+import { Dbdata, fetchDataWithTimeout } from "../../../Utils/request";
 import { showLove } from "../../../data/data";
 const Toolbar = styled.header`
 
@@ -46,11 +46,14 @@ function Carosule() {
   }
   const [slider, setSlider] = useState([]);
   const getshowdata = async () => {
-    await Dbdata.get("showlove")
-      .then(({ data }) => {
-        setSlider(data.showlove)
-        return;
-      }).catch((err)=>setSlider(showLove().showlove));
+    await fetchDataWithTimeout(Dbdata.get("showlove"), 2000)
+    .then(({ data }) => {
+      setNewly(data.showlove);
+    })
+    .catch((err) => {
+      setNewly(showLove().showlove); // Fallback logic
+      console.error(err.message);
+    });
 
   }
 
