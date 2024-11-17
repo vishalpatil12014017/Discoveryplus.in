@@ -136,13 +136,7 @@ function Newly() {
     const [newly, setNewly] = useState([]);
     const {setshowData } = useContext(AuthContext);
     const getshowdata = async () => {
-        await Dbdata.get("Newlyadded")
-            .then(({ data }) => {
-                setNewly(data.newlyadded)
-                return;
-            }).catch((err)=>setNewly(NewlyAdded().newlyadded));
-
-
+        setNewly(NewlyAdded().newlyadded);
     }
 
     useEffect(() => {

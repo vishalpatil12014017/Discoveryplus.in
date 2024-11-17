@@ -13,13 +13,8 @@ import { freeStream } from "../../../data/data";
 function Free() {
   const [newly, setNewly] = useState([]);
   const { setshowData } = useContext(AuthContext);
-  const getshowdata = async () => {
-    await Dbdata.get("freestream")
-      .then(({ data }) => {
-        setNewly(data.freestream);
-        return;
-      })
-      .catch((err) => setNewly(freeStream().freestream));
+  const getshowdata = () => {
+    setNewly(freeStream().freestream)
   };
 
   useEffect(() => {

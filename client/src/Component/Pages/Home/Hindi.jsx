@@ -13,13 +13,8 @@ import { favHindi } from "../../../data/data";
 function Free() {
     const [newly, setNewly] = useState([]);
     const {setshowData } = useContext(AuthContext);
-    const getshowdata = async () => {
-        await Dbdata.get("favhindi")
-            .then(({ data }) => {
-                setNewly(data.favhindi)
-                return;
-            }).catch((err)=>setNewly(favHindi().favhindi));
-
+    const getshowdata = () => {
+        setNewly(favHindi().favhindi)
     }
 
     useEffect(() => {

@@ -14,15 +14,8 @@ import { best } from "../../../data/data";
 function Best() {
   const [newly, setNewly] = useState([]);
   const { setshowData, showdata } = useContext(AuthContext);
-  const getshowdata = async () => {
-    await fetchDataWithTimeout(Dbdata.get("best"), 2000)
-      .then(({ data }) => {
-        setNewly(data.best);
-      })
-      .catch((err) => {
-        setNewly(best().best); // Fallback logic
-        console.error(err.message);
-      });
+  const getshowdata = () => {
+    setNewly(best().best); // Fallback logic
   };
 
   useEffect(() => {

@@ -6,12 +6,8 @@ import { Link } from 'react-router-dom'
 import { superstar } from "../../../data/data";
 function Famous() {
     const [newly, setNewly] = useState([]);
-    const getshowdata = async () => {
-        await Dbdata.get("superstar")
-            .then(({ data }) => {
-                setNewly(data.superstar)
-                return;
-            }).catch((err)=>setNewly(superstar().superstar));
+    const getshowdata = () => {
+        setNewly(superstar().superstar)
 
     }
 

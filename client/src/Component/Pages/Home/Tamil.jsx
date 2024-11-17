@@ -13,13 +13,8 @@ import { favTamil } from "../../../data/data";
 function Free() {
     const {setshowData } = useContext(AuthContext);
     const [newly, setNewly] = useState([]);
-    const getshowdata = async () => {
-        await Dbdata.get("favtamil")
-            .then(({ data }) => {
-                setNewly(data.favtamil)
-                return;
-            }).catch((err)=>setNewly(favTamil().favtamil));
-
+    const getshowdata = () => {
+        setNewly(favTamil().favtamil)
     }
 
     useEffect(() => {

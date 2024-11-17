@@ -134,12 +134,7 @@ h5{
 function Showlove() {
     const [showlove, setShowlove] = useState([]);
     const getshowdata = async () => {
-        await Dbdata.get("showlove")
-            .then(({ data }) => {
-                setShowlove(data.showlove)
-                return;
-            }).catch((err)=>setShowlove(showLove().showlove));
-
+        setShowlove(showLove().showlove)
 
     }
 

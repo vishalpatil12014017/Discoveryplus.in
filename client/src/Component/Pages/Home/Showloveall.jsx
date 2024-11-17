@@ -135,12 +135,8 @@ h5{
 function Showloveall() {
     const [showlove, setShowlove] = useState([]);
     const {setshowData } = useContext(AuthContext);
-    const getshowdata = async () => {
-        await Dbdata.get("showlove")
-            .then(({ data }) => {
-                setShowlove(data.showlove)
-                return;
-            }).catch((err)=>setShowlove(showLove().showlove));
+    const getshowdata = () => {
+        setShowlove(showLove().showlove)
 
     }
 

@@ -45,15 +45,8 @@ function Carosule() {
     handlemail();
   }
   const [slider, setSlider] = useState([]);
-  const getshowdata = async () => {
-    await fetchDataWithTimeout(Dbdata.get("showlove"), 2000)
-    .then(({ data }) => {
-      setNewly(data.showlove);
-    })
-    .catch((err) => {
-      setNewly(showLove().showlove); // Fallback logic
-      console.error(err.message);
-    });
+  const getshowdata = () => {
+    setNewly(showLove().showlove); // Fallback logic
 
   }
 
